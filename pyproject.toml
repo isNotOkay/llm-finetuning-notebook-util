@@ -1,0 +1,37 @@
+[build-system]
+requires = ["hatchling>=1.21"]
+build-backend = "hatchling.build"
+
+[project]
+name = "llm-finetuning-notebook-util"        # pip install name (hyphens OK)
+version = "0.1.0"
+description = "Colab-friendly utilities for Unsloth/PEFT notebooks"
+readme = "README.md"
+authors = [{ name = "Kayosh" }]
+license = { text = "MIT" }
+requires-python = ">=3.9"
+dependencies = []   # keep light; heavy deps go under optional extras
+
+keywords = ["llm", "finetuning", "huggingface", "unsloth", "colab"]
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3 :: Only",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent",
+]
+
+[project.urls]
+Homepage = "https://github.com/yourname/llm-finetuning-notebook-util"
+Issues = "https://github.com/yourname/llm-finetuning-notebook-util/issues"
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/llm_finetuning_notebook_util"]
+
+# Optional: exclude dev/editor files from build
+[tool.hatch.build]
+exclude = [
+    "/.idea",
+    "/.venv",
+    "*.iml",
+    "tests",
+]
